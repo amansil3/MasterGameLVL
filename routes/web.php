@@ -11,6 +11,16 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/template', function () {
     return view('index');
 });
+Route::get('/', function () {
+    return view('index2');
+});
+
+Route::get('admin/socios', ['uses' => 'MostrarSocios@index']);
+Route::get('admin/empleados', ['uses' => 'MostrarEmpleados@index']);
+Route::get('admin/facturacion', ['uses' => 'Facturacion@index']);
+Route::get('admin/stock', ['uses' => 'Stock@index']);
+Route::get('admin/proveedores', ['uses' => 'Proveedores@index']);
+Route::get('admin/estadisticas', ['uses' => 'Estadisticas@index']);

@@ -33,7 +33,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark" 
         style="position: sticky; z-index: 1071; top: 0;">
             <div class="d-flex justify-content-end">
-            <a class="navbar-brand" href="index.php"  style="color: #fff;">
+            <a class="navbar-brand" href="/"  style="color: #fff;">
                 <img src="/images/mg2.jpg" width="80" height="30" class="d-inline-block align-top" data-toggle="tooltip" data-placement="bottom" title="Sistema de Logística Master Game">
                 Sistema de Logística
                </a>
@@ -41,19 +41,19 @@
                 <div class="collapse navbar-collapse" id="navbarText">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="index.php" style="margin-right: 1rem; color: #fff;">Inicio <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="/" style="margin-right: 1rem; color: #fff;">Inicio <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item" style="margin-right: 1rem;">
-                            <a class="nav-link" href="../empleados/FichasEmpleados.php" style="color: #fff;">Personal</a>
+                            <a class="nav-link" href="/admin/empleados" style="color: #fff;">Personal</a>
                         </li>
                         <li class="nav-item" style="margin-right: 1rem;">
-                            <a class="nav-link" href="../proveedores/Proveedores.php" style="color: #fff;">Proveedores</a>
+                            <a class="nav-link" href="/admin/proveedores" style="color: #fff;">Proveedores</a>
                         </li>
                         <li class="nav-item" style="margin-right: 1rem;">
-                            <a class="nav-link" href="../clientes/crud.php" style="color: #fff;">Clientes</a>
+                            <a class="nav-link" href="/admin/socios" style="color: #fff;">Clientes</a>
                         </li>
                         <li class="nav-item" style="margin-right: 1rem;">
-                            <a class="nav-link" href="../inventarioo/nuevo.php" style="color: #fff;">Gestionar Stock</a>
+                            <a class="nav-link" href="/admin/stock" style="color: #fff;">Gestionar Stock</a>
                         </li>
                     </ul>
                     <span class="navbar-text">
@@ -78,19 +78,16 @@
 
                 <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
 
-                    @yield('main-content')
+                    <div class="container-fluid">
+                        @yield('main')
+                    </div>
 
                 </main>
 
                 <!-- Right Sidebar -->
-
                 <div class="d-none d-xl-block col-xl-2 bd-toc" style="margin-top: 2rem;">
                     <ul class="section-nav" style="list-style: none; margin-top: 4rem;">
-                        <li class="toc-entry toc-h2">
-                            <a href="index.php" style="color:#99979c">
-                                <i class="fa fa-home" aria-hidden="true"></i> Volver al inicio
-                            </a>
-                        </li>
+                    @yield('sidebar')
                     </ul>
                 </div>
 
