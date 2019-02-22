@@ -20,6 +20,7 @@ class CreateCliente extends Migration
             $table->string('direccion',50);
             $table->string('telefono',50);
             $table->string('dni',50);
+            $table->boolean('estado')->default(true);
         });
     }
 

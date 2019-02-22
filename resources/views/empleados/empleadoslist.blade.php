@@ -24,9 +24,12 @@
                         <td> {{ $trabajador->telefono }} </td>
                         <td> {{ $trabajador->fecha_ingreso }} </td>
                         <td>
-                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+                            <a class="btn btn-info" href="/admin/empleados/edit/{{$trabajador->id}}">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                            <button id="{{$trabajador->id}}" type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" data-id="{{$trabajador->id}}" onclick="holis(this)">
                                 <i class="fa fa-trash-alt"></i>
-                            </button>
+                            </button>                       
                         </td>
                     </tr>
                 @endforeach
@@ -38,40 +41,33 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel"> Borrar </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <div class="modal-body">
-                <div class="input-group">
-                    <label>Nombre:</label>
-                    <input type="text" name="nombre" value="" required minlength="3">
-                </div>
-                <div class="input-group">
-                    <label>Apellido:</label>
-                    <input type="text" name="apellido" value="" required minlength="3">
-                </div>
-                <div class="input-group">
-                    <label>Teléfono:</label>
-                    <input type="number" name="telefono" required minlength="2000000">
-                </div>
-                <div class="input-group">
-                    <label>DNI:</label>
-                    <input type="number" name="DNI" required min="10000000">
-                </div>
-                <div class="input-group">
-                    <label>Fecha ingreso laboral:</label>
-                    <input type="date" name="fecha" required>
-                </div>
+                <label id="asd"></label>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No, solo arrimar el sogan</button>
+                <form method="POST" action="/admin/empleados/delete">
+                    @csrf
+                    <input type="hidden" name="id_delete" id="idd" value="">
+                    <button type="submit" class="btn btn-danger">SEEEEEEEEEEEE</button>
+                <form>
               </div>
             </div>
           </div>
         </div>
+
+        <script type="text/javascript"> 
+            function holis(event){
+                document.getElementById('asd').innerHTML = "Desea nenear en la boca a " + " " + event.getAttribute('data-id') + "?";
+                $("#idd").val(event.getAttribute('data-id'));
+            }
+
+        </script>
 
     @endsection
 

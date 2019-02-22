@@ -21,9 +21,11 @@ Route::get('/', function () {
 Route::get('admin/socios', ['uses' => 'MostrarSocios@index']);
 Route::get('admin/empleados', ['uses' => 'MostrarEmpleados@index']);
 Route::get('admin/facturacion', ['uses' => 'Facturacion@index']);
-Route::get('admin/stock', ['uses' => 'Stock@index']);
+Route::get('admin/stock', ['uses' => 'StockController@index']);
 Route::get('admin/proveedores', ['uses' => 'Proveedores@index']);
 Route::get('admin/estadisticas', ['uses' => 'Estadisticas@index']);
 
 Route::get('admin/empleados/loquesea', ['uses' => 'MostrarEmpleados@Form']);
-Route::post('admin/empleados/alta', ['uses' => 'MostrarEmpleados@EmployeeForm']);
+Route::post('admin/empleados/nuevo', ['uses' => 'MostrarEmpleados@newEmployeeCreate']);
+Route::get('admin/empleados/edit/{id}', ['uses' => 'MostrarEmpleados@EditEmployee']);
+Route::post('admin/empleados/delete', ['uses' => 'MostrarEmpleados@DeleteEmployee']);

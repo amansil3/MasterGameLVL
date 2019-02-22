@@ -21,6 +21,7 @@ class CreateEmpleados extends Migration
             $table->string('telefono',50);
             $table->string('dni',50);
             $table->date('fecha_ingreso');
+            $table->boolean('estado')->default(true);
         });
     }
 

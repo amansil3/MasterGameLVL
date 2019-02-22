@@ -19,6 +19,7 @@ class CreateProveedores extends Migration
             $table->string('direccion',50);
             $table->string('telefono',50);
             $table->integer('cuit');
+            $table->boolean('estado')->default(true);
         });
     }
 
