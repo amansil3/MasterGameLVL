@@ -88,8 +88,6 @@ class MostrarEmpleados extends Controller
     }
     public function DeleteEmployee(Request $request){
   		
-
-
   		$employee = Employee::find($request['id_delete']);
 
   		$employee->estado = 0;
